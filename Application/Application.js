@@ -13,3 +13,4 @@ for (const element of die) {
     element.roll()
     console.log(element.eyes);
 }
+//joe
