@@ -28,3 +28,4 @@ function upperSectionScore(eyes) {
   return sum;
 }
 console.log("antal 1'er: ",upperSectionScore(1));
+//FUnktion
