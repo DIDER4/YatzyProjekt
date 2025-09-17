@@ -1,14 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="GUI.css">
-</head>
-<body>
-    <div id="YatzyContainer" class="container" style="display:block;">
-        <h2 style="text-align:center; color:#ffea00;">YATZY</h2>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yatzy</title>
+    <link rel="stylesheet" href="GUI.css" />
+  </head>
+  <body>
+    <div id="YatzyContainer" class="container">
+      <div id="YatzyGame" class="game">
+        <div class="left">
+          <h2 style="text-align: center; color: #ffea00">YATZY</h2>
+          <div id="YatzyDice" class="dice">
+          <div class="die" id="die1" data-held="false" role="button" tabindex="0">
+            <img
+              src="Images/terning1.png"
+              alt="1"
+              id="dieImg1"
+              class="die-img"
+              data-value="1"
+            />
+          </div>
+          <div class="die" id="die2" data-held="false">
+            <img
+              src="Images/terning2.png"
+              alt="2"
+              id="dieImg2"
+              class="die-img"
+              data-value="2"
+            />
+          </div>
+          <div class="die" id="die3" data-held="false">
+            <img
+              src="Images/terning3.png"
+              alt="3"
+              id="dieImg3"
+              class="die-img"
+              data-value="3"
+            />
+          </div>
+          <div class="die" id="die4" data-held="false">
+            <img
+              src="Images/terning4.png"
+              alt="4"
+              id="dieImg4"
+              class="die-img"
+              data-value="4"
+            />
+          </div>
+          <div class="die" id="die5" data-held="false" role="button" tabindex="0">
+            <img
+              src="Images/terning5.png"
+              alt="5"
+              id="dieImg5"
+              class="die-img"
+              data-value="5"
+            />
+          </div>
+        </div>
+          <div class="controls">
+            <button id="rollButton" class="button">Kast terninger</button>
+          </div>
+        </div>
+        <div id="scoreboard" class="scoreboard">
+          <h3>Scoreboard</h3>
+          <table class="score-table">
+            <tr>
+              <th>Kategori</th>
+              <th>Score</th>
+            </tr>
+            <tr>
+              <td><label for="score1s" class="score-label">1-s</label></td>
+              <td>
+                <input
+                  type="text"
+                  id="score1s"
+                  class="score-input"
+                  readonly
+                  value="0"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td><label for="score2s" class="score-label">2-s</label></td>
+              <td>
+                <input
+                  type="text"
+                  id="scoreTwos"
+                  class="score-input"
+                  readonly
+                  value="0"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="scoreThrees" class="score-label">3-s</label>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="scoreThrees"
+                  class="score-input"
+                  readonly
+                  value="0"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td><label for="scoreFours" class="score-label">4-s</label></td>
+              <td>
+                <input
+                  type="text"
+                  id="scoreFours"
+                  class="score-input"
+                  readonly
+                  value="0"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td><label for="scoreFives" class="score-label">5-s</label></td>
+              <td>
+                <input
+                  type="text"
+                  id="scoreFives"
+                  class="score-input"
+                  readonly
+                  value="0"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td><label for="scoreSixes" class="score-label">6-s</label></td>
+              <td>
+                <input
+                  type="text"
+                  id="scoreSixes"
+                  class="score-input"
+                  readonly
+                  value="0"
+                />
+              </td>
+              <td><strong>Sum</strong></td>
+              <td><input type="text" id="scoreSum" class="score-input" readonly value="0" /></td>
+              <td><strong>Bonus</strong></td>
+              <td><input type="text" id="scoreBonus" class="score-input" readonly value="0" /></td>
+            </tr>
+            <tr>
+              <td>
+                <label for="scoreOnePair" class="score-label"
+                  >One pair</label
+                >
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="scoreOnePair"
+                  class="score-input"
+                  readonly
+                  value="0"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="scoreTwoPairs" class="score-label"
+                  >Two Pairs</label
+                >
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="scoreTwoPairs"
+                  class="score-input"
+                  readonly
+                  value="0"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="scoreThreeSame" class="score-label"
+                  >Three same</label
+                >
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="scoreThreeSame"
+                  class="score-input"
+                  readonly
+                  value="0"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="scoreFourSame" class="score-label"
+                  >Four same</label
+                >
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="scoreFourSame"
+                  class="score-input"
+                  readonly
+                  value="0"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="scoreFullHouse" class="score-label"
+                  >Full House</label
+                >
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="scoreFullHouse"
+                  class="score-input"
+                  readonly
+                  value="0"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="scoreSmallStraight" class="score-label"
+                  >Small Straight</label
+                >
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="scoreSmallStraight"
+                  class="score-input"
+                  readonly
+                  value="0"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="scoreLargeStraight" class="score-label"
+                  >Large Straight</label
+                >
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="scoreLargeStraight"
+                  class="score-input"
+                  readonly
+                  value="0"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="scoreChance" class="score-label">Chance</label>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="scoreChance"
+                  class="score-input"
+                  readonly
+                  value="0"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td><label for="scoreYatzy" class="score-label">Yatzy</label></td>
+              <td>
+                <input
+                  type="text"
+                  id="scoreYatzy"
+                  class="score-input"
+                  readonly
+                  value="0"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Sum</strong></td>
+              <td><input type="text" id="scoreSum" class="score-input" readonly value="0" /></td>
+            </tr>
+            <tr>
+              <td><strong>Bonus</strong></td>
+              <td><input type="text" id="scoreBonus" class="score-input" readonly value="0" /></td>
+            </tr>
+            <tr>
+              <td><strong>Total</strong></td>
+              <td><input type="text" id="scoreTotal" class="score-input" readonly value="0" /></td>
+            </tr>
+          </table>
+        </div>
+      </div>
     </div>
-</body>
+    <script src="GUI.JS"></script>
+  </body>
 </html>

@@ -1,18 +1,57 @@
-body {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  background: linear-gradient(120deg, #f0f4f8 0%, #e0e7ff 100%);
+/* Enkel CSS til Yatzy - begyndervenlig
+   - Bruger kun enkel grid/flex
+   - Bevarer alle ID'er som JS kræver
+*/
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f3f6fb;
+  color:#222;
+  padding:20px;
 }
 
-.container {
-  max-width: 1100px;
-  margin: 40px auto;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-  padding: 32px;
-  display: flex;
-  flex-direction: row;
-  gap: 32px;
+.container{
+  max-width:900px;
+  margin:0 auto;
+  background:#fff;
+  border-radius:8px;
+  padding:16px;
 }
+
+/* Simpelt 2-kolonne layout: venstre = spil, højre = scoreboard */
+.game{
+  display:grid;
+  grid-template-columns: 1fr 320px;
+  gap:16px;
+}
+
+@media (max-width:800px){
+  .game{ grid-template-columns: 1fr; }
+}
+
+/* Dice - blot en række terninger med lidt mellemrum */
+.dice{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  align-items:center;
+  margin-bottom:12px;
+}
+
+.die{ cursor:pointer; }
+.die-img{ width:64px; height:64px; display:block }
+
+.controls{ text-align:center; margin-bottom:8px }
+.button{ padding:8px 12px; border-radius:6px; border: none; background:#ffd54a; cursor:pointer }
+
+/* Scoreboard: enkel tabel-styling */
+.scoreboard{ background:#fafafa; padding:10px; border-radius:6px }
+.score-table{ width:100%; border-collapse:collapse }
+.score-table td, .score-table th{ padding:6px; border-bottom:1px solid #eee }
+.score-input{ width:70px; text-align:right; padding:4px }
+
+.held { opacity:0.9; transform:translateY(-4px); }
+
+
