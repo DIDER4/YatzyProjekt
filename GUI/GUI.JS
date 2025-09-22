@@ -6,11 +6,16 @@ rollbtn.onclick = () => {
         remainingRolls--;
         rollAll()
         updateDiceImages()
-        rollAll()
-        updateDiceImages()
         calculateUppersection()
         calculatePair()
         calculateTwoPairs()
+        calculateThreeSame()
+        calculateFourSame()
+        calculateFullHouse()
+        calculateSmallStraight()
+        calculateLargeStraight()
+        calculateChance()
+        calculateYatzy()
     }
 }
 
@@ -47,3 +52,51 @@ function calculateTwoPairs(){
     const scoreField = document.querySelector('#scoreTwoPairs')
     scoreField.value = twoPairScore()
 }
+
+function calculateThreeSame(){
+    const scoreField = document.querySelector('#scoreThreeSame')
+    scoreField.value = threeOfAKind()
+}
+
+function calculateFourSame(){
+    const scoreField = document.querySelector('#scoreFourSame')
+    scoreField.value = fourOfAKind()
+}
+
+function calculateFullHouse(){
+    const scoreField = document.querySelector('#scoreFullHouse')
+    scoreField.value = fullHouseScore()
+}
+
+function calculateSmallStraight(){
+    const scoreField = document.querySelector('#scoreSmallStraight')
+    if(!scoreField.classList.contains('locked')){
+        scoreField.value = smallStraightScore()
+    }
+}
+
+function calculateLargeStraight(){
+    const scoreField = document.querySelector('#scoreLargeStraight')
+    scoreField.value = largeStraightScore()
+}
+
+function calculateChance(){
+    const scoreField = document.querySelector('#scoreChance')
+    scoreField.value = chanceScore()
+}
+
+function calculateYatzy(){
+    const scoreField = document.querySelector('#scoreYatzy')
+    scoreField.value = yatzyScore()
+}
+
+const scoreFields = document.querySelectorAll('.score-input')
+
+for (const element of scoreFields) {
+    element.onclick = () => {
+        if(!element.classList.contains('locked')){
+        element.classList.add('locked')
+     }
+    }
+}
+

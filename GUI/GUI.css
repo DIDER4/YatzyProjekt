@@ -100,3 +100,10 @@ h2 { /* YATZY overskriften i toppen af siden */
   opacity: 0.9;
   transform: translateY(-4px);
 }
+
+
+.locked {
+  background-color: #ddd;
+  color: #555;
+  cursor: default;
+}
