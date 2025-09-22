@@ -10,61 +10,32 @@
     <div id="YatzyContainer" class="container">
       <div id="YatzyGame" class="game">
         <div class="left">
-          <h2 style="text-align: center; color: #ffea00">YATZY</h2>
+          <h2>YATZY</h2>
           <div id="YatzyDice" class="dice">
-          <div class="die" id="die1" data-held="false" role="button" tabindex="0">
-            <img
-              src="Images/terning1.png"
-              alt="1"
-              id="dieImg1"
-              class="die-img"
-              data-value="1"
-            />
+            <div class="die" id="die1" data-held="false" role="button" tabindex="0">
+              <img src="Images/terning1.png" alt="1" id="dieImg1" class="die-img" data-value="1" />
+            </div>
+            <div class="die" id="die2" data-held="false">
+              <img src="Images/terning2.png" alt="2" id="dieImg2" class="die-img" data-value="2" />
+            </div>
+            <div class="die" id="die3" data-held="false">
+              <img src="Images/terning3.png" alt="3" id="dieImg3" class="die-img" data-value="3" />
+            </div>
+            <div class="die" id="die4" data-held="false">
+              <img src="Images/terning4.png" alt="4" id="dieImg4" class="die-img" data-value="4" />
+            </div>
+            <div class="die" id="die5" data-held="false" role="button" tabindex="0">
+              <img src="Images/terning5.png" alt="5" id="dieImg5" class="die-img" data-value="5" />
+            </div>
           </div>
-          <div class="die" id="die2" data-held="false">
-            <img
-              src="Images/terning2.png"
-              alt="2"
-              id="dieImg2"
-              class="die-img"
-              data-value="2"
-            />
-          </div>
-          <div class="die" id="die3" data-held="false">
-            <img
-              src="Images/terning3.png"
-              alt="3"
-              id="dieImg3"
-              class="die-img"
-              data-value="3"
-            />
-          </div>
-          <div class="die" id="die4" data-held="false">
-            <img
-              src="Images/terning4.png"
-              alt="4"
-              id="dieImg4"
-              class="die-img"
-              data-value="4"
-            />
-          </div>
-          <div class="die" id="die5" data-held="false" role="button" tabindex="0">
-            <img
-              src="Images/terning5.png"
-              alt="5"
-              id="dieImg5"
-              class="die-img"
-              data-value="5"
-            />
-          </div>
-        </div>
           <div class="controls">
             <button id="rollButton" class="button">Kast terninger</button>
           </div>
         </div>
-        <div id="scoreboard" class="scoreboard">
-          <h3>Scoreboard</h3>
-          <table class="score-table">
+      </div>
+      <div id="scoreboard" class="scoreboard">
+        <h3>Scoreboard</h3>
+        <table class="score-table">
             <tr>
               <th>Kategori</th>
               <th>Score</th>
