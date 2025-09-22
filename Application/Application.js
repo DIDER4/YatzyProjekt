@@ -32,7 +32,7 @@ function upperSectionScore(eyes) {
   sum = 0;
   for (const element of die) {
     if (element.eyes === eyes) {
-      sum++;
+      sum += element.eyes;
     }
   }
   return sum;

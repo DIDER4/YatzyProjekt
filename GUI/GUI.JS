@@ -3,6 +3,9 @@ const rollbtn = document.querySelector('#rollButton');
 rollbtn.onclick = () => {
     rollAll()
     updateDiceImages()
+    calculateUppersection()
+    calculatePair()
+    calculateTwoPairs()
 }
 
 
@@ -22,8 +25,19 @@ for (let i = 0; i < die.length; i++) {
     }
 }
 
+function calculateUppersection(){
+for (let i = 1; i <= 6; i++) {
+    const scoreField = document.querySelector(`#score${i}s`)
+    scoreField.value = upperSectionScore(i)
+}
+}
 
-for (let i = 0; i < die.length; i++) {
-    const scoreField = document.querySelector(`#score${i + 1}s`)
-    scoreField.value = upperSectionScore(i + 1)
+function calculatePair(){
+    const scoreField = document.querySelector('#scoreOnePair')
+    scoreField.value = onePairScore()
+}
+
+function calculateTwoPairs(){
+    const scoreField = document.querySelector('#scoreTwoPairs')
+    scoreField.value = twoPairScore()
 }
