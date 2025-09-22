@@ -1,6 +1,12 @@
 const rollbtn = document.querySelector('#rollButton');
+let remainingRolls = 3;
 
 rollbtn.onclick = () => {
+    if (remainingRolls > 0) {
+        remainingRolls--;
+        rollAll()
+        updateDiceImages()
+    }
     rollAll()
     updateDiceImages()
     calculateUppersection()

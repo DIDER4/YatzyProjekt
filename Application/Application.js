@@ -13,13 +13,13 @@ for (let index = 1; index <= 5; index++) {
   die.push(dice);
 }
 
-function rollAll(){
-    for (const element of die) {
-        if(element.hold == false){
-            element.roll()
-            console.log(element.eyes)
-        }
+function rollAll() {
+  for (const element of die) {
+    if (element.hold == false) {
+      element.roll()
+      console.log(element.eyes)
     }
+  }
 }
 
 for (const element of die) {
@@ -38,6 +38,29 @@ function upperSectionScore(eyes) {
   return sum;
 }
 console.log("Amount of 1's ", upperSectionScore(1));
+
+/*
+//SUM for uppersection
+function upperSectionSum(){
+  let sum = 0;
+  for(let i = 1; i <= 6; i++){
+    sum += upperSectionScore(i) * i;
+  }
+  return sum;
+}
+console.log("SUM ", upperSectionSum());
+*/
+
+//Bonus for uppersection
+/*
+function upperSectionBonus(){
+  if(upperSectionSum() >= 63){
+    return 50;
+  }
+  return 0;
+}
+console.log("Bonus: +", upperSectionBonus());
+*/
 
 //Et par
 function onePairScore() {
@@ -195,13 +218,12 @@ function yatzyScore() {
       if (die[index].eyes == die[index2].eyes) {
         counter++;
       }
-      if (counter >= 5) {
-        return 50;
-      }
 
     }
-    return 0;
+    if (counter >= 5) {
+      return 50;
+    }
   }
-
+  return 0;
 }
 console.log("YAZTY!!!!: ", yatzyScore());
