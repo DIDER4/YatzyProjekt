@@ -1,66 +1,98 @@
-
-*{box-sizing:border-box}
-body{
-  margin:0;
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   background: #f3f6fb;
-  color:#222;
-  padding:20px;
+  color: #222;
+  padding: 20px;
 }
 
-h2{
-  text-align:center;
+h2 {
+  text-align: center;
   color: #ffee00;
-  font-size:4rem;
+  font-size: 4rem;
   text-shadow: 5px 5px 0 #ffc400, 10px 10px 0 #ff9900;
   animation: shadow-træk 2s infinite;
 }
 
 @keyframes shadow-træk {
-    0%, 100% {
-        text-shadow: 5px 5px 0 #ffc400, 10px 10px 0 #ff9900;
-    }
-    50% {
-        text-shadow: -5px -5px 0 #ff9900, -10px -10px 0 #ffc400;
-    }
+  0%,
+  100% {
+    text-shadow: 5px 5px 0 #ffc400, 10px 10px 0 #ff9900;
+  }
+  50% {
+    text-shadow: -5px -5px 0 #ff9900, -10px -10px 0 #ffc400;
+  }
 }
 
-.container{
-  max-width:900px;
-  margin:0 auto;
-  background:#fff;
-  border-radius:8px;
-  padding:16px;
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
 }
 
-.game{
+.game {
   display: grid;
   grid-template-rows: auto auto;
   gap: 16px;
 }
 
-
 /* Dice - blot en række terninger med lidt mellemrum */
-.dice{
-  display:flex;
-  gap:12px;
-  justify-content:center;
-  align-items:center;
-  margin-bottom:12px;
+.dice {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 12px;
 }
 
-.die{ cursor:pointer; }
-.die-img{ width:128px; height:128px; display:block }
+.die {
+  cursor: pointer;
+}
+.die-img {
+  width: 128px;
+  height: 128px;
+  display: block;
+}
 
-.controls{ text-align:center; margin-bottom:8px }
-.button{ padding:8px 12px; border-radius:6px; border: none; background:#ffd54a; cursor:pointer }
+.controls {
+  text-align: center;
+  margin-bottom: 8px;
+}
+.button {
+  padding: 8px 350px;
+  border-radius: 6px;
+  border: none;
+  background: #ffd54a;
+  cursor: pointer;
+}
 
 /* Scoreboard: enkel tabel-styling */
-.scoreboard{ background:#fafafa; padding:10px; border-radius:6px }
-.score-table{ width:100%; border-collapse:collapse }
-.score-table td, .score-table th{ padding:6px; border-bottom:1px solid #eee }
-.score-input{ width:70px; text-align:right; padding:4px }
+.scoreboard {
+  background: #fafafa;
+  padding: 10px;
+  border-radius: 6px;
+}
+.score-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.score-table td,
+.score-table th {
+  padding: 6px;
+  border-bottom: 1px solid #eee;
+}
+.score-input {
+  width: 70px;
+  text-align: right;
+  padding: 4px;
+}
 
-.held { opacity:0.9; transform:translateY(-4px); }
-
-
+.held {
+  opacity: 0.9;
+  transform: translateY(-4px);
+}
