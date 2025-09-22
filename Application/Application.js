@@ -29,7 +29,7 @@ function upperSectionScore(eyes) {
   }
   return sum;
 }
-console.log("antal 1'er: ", upperSectionScore(1));
+console.log("Amount of 1's ", upperSectionScore(1));
 
 //Et par
 function onePairScore() {
@@ -43,7 +43,7 @@ function onePairScore() {
   }
   return 0;
 }
-console.log("Et par: ", onePairScore());
+console.log("A pair: ", onePairScore());
 
 //To par
 function twoPairScore() {
@@ -64,44 +64,45 @@ function twoPairScore() {
   }
   return 0;
 }
-console.log("To par: ", twoPairScore());
+console.log("Two pairs: ", twoPairScore());
 
 //Three of a kind
-function threeOfAKind(){
-    let sum = 0
-    for (let index = 0; index < die.length; index++) {
-        let counter = 0
-        for (let index2 = index+1; index2 < die.length; index2++) {
-            if(die[index].eyes == die[index2].eyes){
-                counter++
-                if(counter == 2){
-                    sum = die[index].eyes * 3
-                }
-            }
+function threeOfAKind() {
+  let sum = 0
+  for (let index = 0; index < die.length; index++) {
+    let counter = 0
+    for (let index2 = index + 1; index2 < die.length; index2++) {
+      if (die[index].eyes == die[index2].eyes) {
+        counter++
+        if (counter == 2) {
+          sum = die[index].eyes * 3
         }
+      }
     }
-    return sum
+  }
+  return sum
 }
-
-console.log(threeOfAKind())
+console.log("Three of a kind: ", threeOfAKind());
 
 
 //Full house
-function fullHouseScore(){
-  //threeOfTheSame = threeOfAKind
-  twoOfTheSame = twoPairScore;
+function fullHouseScore() {
+  let threeOfTheSame = threeOfAKind();
 
-  if(threeOfTheSame == 0 || twoOfTheSame == 0){
+  if (threeOfTheSame == 0) {
     return 0;
   }
 
-  if(threeOfTheSame / 3 ==  twoOfTheSame / 2 ){
-    return 0;
+  for (let index = 0; index < die.length; index++) {
+    dieOne = die[index].eyes;
+    for (let index2 = index + 1; index2 < die.length; index2++) {
+      if (dieOne === die[index2].eyes && dieOne != (threeOfTheSame/3)) {
+        return threeOfTheSame + (dieOne * 2);
+      }
+    }
   }
-
-  return threeOfTheSame + twoOfTheSame;
+  return 0;
 }
-console.log("antal 1'er: ",upperSectionScore(1));
-//FUnktion
+console.log("Fullhouse: ", fullHouseScore());
 
 
