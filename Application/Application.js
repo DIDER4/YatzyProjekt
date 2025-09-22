@@ -29,3 +29,21 @@ function upperSectionScore(eyes) {
 }
 console.log("antal 1'er: ",upperSectionScore(1));
 //FUnktion
+
+function threeOfAKind(){
+    let sum = 0
+    for (let index = 0; index < die.length; index++) {
+        let counter = 0
+        for (let index2 = index+1; index2 < die.length; index2++) {
+            if(die[index].eyes == die[index2].eyes){
+                counter++
+                if(counter == 2){
+                    sum = die[index].eyes * 3
+                }
+            }
+        }
+    }
+    return sum
+}
+
+console.log(threeOfAKind())
