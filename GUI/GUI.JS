@@ -16,6 +16,9 @@ rollbtn.onclick = () => {
         calculateLargeStraight()
         calculateChance()
         calculateYatzy()
+        calculateSum()
+        calculateBonus()
+        calculateTotal()
     }
 }
 
@@ -37,35 +40,47 @@ for (let i = 0; i < die.length; i++) {
 }
 
 function calculateUppersection(){
-for (let i = 1; i <= 6; i++) {
-    const scoreField = document.querySelector(`#score${i}s`)
-    scoreField.value = upperSectionScore(i)
-}
+    for (let i = 1; i <= 6; i++) {
+        const scoreField = document.querySelector(`#score${i}s`)
+        if(!scoreField.classList.contains('locked')){
+            scoreField.value = upperSectionScore(i)
+        }
+    }
 }
 
 function calculatePair(){
     const scoreField = document.querySelector('#scoreOnePair')
-    scoreField.value = onePairScore()
+    if(!scoreField.classList.contains('locked')){
+        scoreField.value = onePairScore()
+    }
 }
 
 function calculateTwoPairs(){
     const scoreField = document.querySelector('#scoreTwoPairs')
-    scoreField.value = twoPairScore()
+    if(!scoreField.classList.contains('locked')){
+        scoreField.value = twoPairScore()
+    }
 }
 
 function calculateThreeSame(){
     const scoreField = document.querySelector('#scoreThreeSame')
-    scoreField.value = threeOfAKind()
+    if(!scoreField.classList.contains('locked')){
+        scoreField.value = threeOfAKind()
+    }
 }
 
 function calculateFourSame(){
     const scoreField = document.querySelector('#scoreFourSame')
-    scoreField.value = fourOfAKind()
+    if(!scoreField.classList.contains('locked')){
+        scoreField.value = fourOfAKind()
+    }
 }
 
 function calculateFullHouse(){
     const scoreField = document.querySelector('#scoreFullHouse')
-    scoreField.value = fullHouseScore()
+    if(!scoreField.classList.contains('locked')){
+        scoreField.value = fullHouseScore()
+    }
 }
 
 function calculateSmallStraight(){
@@ -77,17 +92,23 @@ function calculateSmallStraight(){
 
 function calculateLargeStraight(){
     const scoreField = document.querySelector('#scoreLargeStraight')
-    scoreField.value = largeStraightScore()
+    if(!scoreField.classList.contains('locked')){
+        scoreField.value = largeStraightScore()
+    }
 }
 
 function calculateChance(){
     const scoreField = document.querySelector('#scoreChance')
-    scoreField.value = chanceScore()
+    if(!scoreField.classList.contains('locked')){
+        scoreField.value = chanceScore()
+    }
 }
 
 function calculateYatzy(){
     const scoreField = document.querySelector('#scoreYatzy')
-    scoreField.value = yatzyScore()
+    if(!scoreField.classList.contains('locked')){
+        scoreField.value = yatzyScore()
+    }
 }
 
 const scoreFields = document.querySelectorAll('.score-input')
@@ -96,7 +117,46 @@ for (const element of scoreFields) {
     element.onclick = () => {
         if(!element.classList.contains('locked')){
         element.classList.add('locked')
+        remainingRolls = 3
+        calculateTotal()
      }
     }
 }
 
+
+function calculateSum(){
+    const sumField = document.querySelector('#scoreSum')
+    let sum = 0
+
+    for (let i = 1; i <= 6; i++) {
+        const scoreField = document.querySelector(`#score${i}s`)
+        sum += Number(scoreField.value)
+        console.log(scoreField.value)
+    }
+    sumField.value = sum
+}
+
+
+function calculateBonus(){
+    const bonusField = document.querySelector('#scoreBonus')
+    const sumField = document.querySelector('#scoreSum')
+
+    if(sumField.value >= 63){
+        bonusField.value = 50
+    }else{
+        bonusField.value = 0
+    }
+}
+
+function calculateTotal(){
+    const totalField = document.querySelector('#scoreTotal')
+    const scoreFields = document.querySelectorAll('.score-input')
+
+    let sum = 0
+    for (const element of scoreFields) {
+        if(element.classList.contains('locked')){
+                sum += Number(element.value)
+        }
+    }
+    totalField.value = sum
+}

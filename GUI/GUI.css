@@ -96,6 +96,18 @@ h2 { /* YATZY overskriften i toppen af siden */
   padding: 4px;
 }
 
+.score-total{
+  width: 70px;
+  text-align: right;
+  padding: 4px;
+}
+
+.score-sum{
+   width: 70px;
+  text-align: right;
+  padding: 4px;
+}
+
 .held {
   opacity: 0.9;
   transform: translateY(-4px);
