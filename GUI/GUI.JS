@@ -6,12 +6,12 @@ rollbtn.onclick = () => {
         remainingRolls--;
         rollAll()
         updateDiceImages()
+        rollAll()
+        updateDiceImages()
+        calculateUppersection()
+        calculatePair()
+        calculateTwoPairs()
     }
-    rollAll()
-    updateDiceImages()
-    calculateUppersection()
-    calculatePair()
-    calculateTwoPairs()
 }
 
 
