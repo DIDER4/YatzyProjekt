@@ -17,7 +17,7 @@ for (let index = 1; index <= 5; index++) {
 function rollAll(){
     for (const element of die) {
         if(element.hold == false){
-            element.roll
+            element.roll()
             console.log(element.eyes)
         }
     }
