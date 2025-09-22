@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-function rollDice() {
-    return Math.trunc(Math.random() * 6) + 1;
-=======
+
 let die = [];
 
 for (let index = 1; index <= 5; index++) {
@@ -83,5 +80,4 @@ function fullHouseScore(){
   }
 
   return threeOfTheSame + twoOfTheSame;
->>>>>>> ab7c905f6c16aa53eca9dcc5000eb4823faee62c
 }
