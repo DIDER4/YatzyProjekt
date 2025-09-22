@@ -9,7 +9,7 @@ body {
   padding: 20px;
 }
 
-h2 {
+h2 { /* YATZY overskriften i toppen af siden */
   text-align: center;
   color: #ffee00;
   font-size: 4rem;
@@ -17,7 +17,7 @@ h2 {
   animation: shadow-træk 2s infinite;
 }
 
-@keyframes shadow-træk {
+@keyframes shadow-træk { /* Animation for overskrift effekten */
   0%,
   100% {
     text-shadow: 5px 5px 0 #ffc400, 10px 10px 0 #ff9900;
@@ -28,17 +28,19 @@ h2 {
 }
 
 .container {
-  max-width: 900px;
-  margin: 0 auto;
-  background: #fff;
-  border-radius: 8px;
-  padding: 16px;
+  max-width:900px;
+  margin:0 auto;
+  background:#fff;
+  border-radius:8px;
+  padding:16px;
+  display: grid;
+  grid-template-columns: 1fr; /* single column layout */
+  grid-template-rows: auto 1fr; /* top: game, bottom: scoreboard */
+  gap: 16px;
 }
 
-.game {
-  display: grid;
-  grid-template-rows: auto auto;
-  gap: 16px;
+.game{
+  display: block;
 }
 
 /* Dice - blot en række terninger med lidt mellemrum */
@@ -69,6 +71,8 @@ h2 {
   border: none;
   background: #ffd54a;
   cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 /* Scoreboard: enkel tabel-styling */

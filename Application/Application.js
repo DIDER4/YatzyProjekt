@@ -13,6 +13,15 @@ for (let index = 1; index <= 5; index++) {
   die.push(dice);
 }
 
+function rollAll(){
+    for (const element of die) {
+        if(element.hold == false){
+            element.roll
+            console.log(element.eyes)
+        }
+    }
+}
+
 for (const element of die) {
   element.roll();
   console.log(element.eyes);
