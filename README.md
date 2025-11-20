@@ -113,8 +113,10 @@ Projektet fokuserer på:
 
 **DIDER4**
 - GitHub: [@DIDER4](https://github.com/DIDER4)
+  
 **NUTQUACK**
 - GitHub: [@NUTQUACK](https://github.com/Nutquack)
+  
 **SARA STATOUA**
 - GitHub: [@SARASTATOUA](https://github.com/sarastatoua)
 
