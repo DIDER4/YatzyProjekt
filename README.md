@@ -1,4 +1,6 @@
 # Yatzy Spil
+<img width="730" height="876" alt="Skærmbillede 2025-11-20 194907" src="https://github.com/user-attachments/assets/9b2a16d9-22fc-4e81-ac28-5ee603f683d6" />
+
 
 Et interaktivt Yatzy-spil bygget med HTML, CSS og JavaScript.
 
